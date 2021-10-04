@@ -12,7 +12,7 @@ const skills = [
         progress: '90'
     },
     {
-        name: 'Excel',
+        name: 'Excels',
         progress: '40'
     }
 ];
