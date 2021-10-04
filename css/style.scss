@@ -1,0 +1,282 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    transition: ease all 0.3s;
+}
+
+.layout-left {
+    display: inline-block;
+    vertical-align: top;
+    background: #3b3a3f;
+    color: #cecece;
+    width: 300px;
+    min-width: 300px;
+    min-height: 100vh;
+    height: 100%;
+    // border: solid 3px green;
+    position: relative;
+    padding: 20px 10px 10px 10px;
+    text-align: justify;
+    box-sizing: border-box;
+    box-shadow: 3px 0px 10px 3px #5c5c5c;
+    z-index: 1;
+    > img {
+        width: 120px;
+        height: 170px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-left: calc(50% - 60px);
+        // object-fit: contain;
+        // margin: 0;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+    }
+    > .title {
+        color: #5c40d8;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 5px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-bottom: solid 1px #cecece31;
+        &#name {
+            font-size: 18px;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    > .progress {
+        width: 280px;
+        > .label {
+            display: inline-block;
+            width: calc(30% - 2px);
+        }
+        > .progress-bar {
+            display: inline-block;
+            background: #cecece31;
+            height: 10px;
+            width: calc(70% - 5px);
+            padding: 1px;
+            border-radius: 3px;
+            overflow: hidden;
+            > .line {
+                height: 100%;
+                width: 50%;
+                > .fill {
+                    height: 100%;
+                    background: #5c40d8;
+                    animation-name: progress-fill;
+                    animation-duration: 1s;
+                    animation-timing-function: ease;
+                    border-radius: 3px;
+
+                    @keyframes progress-fill {
+                        from {
+                            width: 0%;
+                        }
+                        to {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.layout-right {
+    margin-left: -5px;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 300px);
+    min-width: 300px;
+    height: 100%;
+    text-align: justify;
+    box-sizing: border-box;
+    > .description {
+        position: relative;
+        background: #727272;
+        color: #ffffff;
+        height: 241px;
+        > .desc {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    > .experience {
+        padding: 10px 0 0 0px;
+        margin: 0 5%;
+        // border-bottom: solid 1px #5c40d8;
+        > .title {
+            display: block;
+            border-top: solid 2px #5c40d8;
+            > .text {
+                text-transform: uppercase;
+                font-weight: bold;
+                background: #5c40d8;
+                color: #cecece;
+                border-bottom-right-radius: 50px;
+                height: 30px;
+                width: 170px;
+                line-height: 30px;
+                padding-left: 10px;
+            }
+        }
+        > .experience-data {
+            display: block;
+            > .years {
+                margin-top: 15px;
+                display: inline-block;
+                width: 20%;
+                height: 100%;
+                vertical-align: top;
+                // font-weight: bold;
+            }
+            > .description {
+                display: inline-block;
+                width: calc(80% - 5px);
+                margin: 10px 0;
+                > h2 {
+                    margin: 0px;
+                }
+                > .years-mobile {
+                    display: none;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &:nth-of-type(3) {
+            margin-top: 25px;
+        }
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .layout-right {
+        > .description {
+            height: 320px;
+        }
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .layout-left,
+    .layout-right {
+        margin-left: 0px;
+        width: 100%;
+        min-height: 0;
+        height: auto;
+    }
+
+    .layout-left {
+        box-shadow: 0px 3px 10px 3px #5c5c5c;
+        > .progress {
+            width: 400px;
+        }
+    }
+
+    .layout-right {
+        > .description {
+            > .desc {
+                width: 95%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 452px) {
+    .layout-left {
+        > .progress {
+            width: 100%;
+        }
+    }
+
+    .layout-right {
+        > .description {
+            height: 450px;
+        }
+        > .experience {
+            > .experience-data {
+                > .years {
+                    display: none;
+                }
+                > .description {
+                    width: 100%;
+                    > .years-mobile {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    background: #ffffff;
+    box-shadow: 0px 0px 5px 2px #727272;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: none;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    opacity: 0.3;
+    transition: 0.2s;
+    z-index: 1;
+    &:hover {
+        opacity: 1;
+        > form {
+            display: block;
+        }
+    }
+    > form {
+        padding: 10px;
+        display: block;
+        width: 260px;
+        margin-top: 25px;
+        display: none;
+        > input {
+            width: calc(100% - 10px);
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: calc(100% - 10px) !important;
+            height: 100px !important;
+            resize: none;
+            margin-bottom: 10px;
+        }
+        > input[type="submit"] {
+            background: #5c40d8;
+            color: #fff;
+            padding: 7px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            &:hover {
+                background: #3c20bd;
+            }
+        }
+    }
+    > .fas {
+        float: right;
+        color: #5c40d8;
+        font-size: 30px;
+        padding: 10px;
+    }
+}

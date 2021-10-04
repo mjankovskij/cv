@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web CV</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="layout-left">
+        <img src="./img/profile.jpg" alt="profile">
+
+        <div class="title" id="name">MAREK JANKOVSKIJ</div>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          Vilnius, Lietuva</p>
+        <p>
+          <i class="fas fa-phone"></i>
+          +37060000000</p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          marek@jankovskij.lt</p>
+
+        <div class="title">Įgūdžiai</div>
+        <div class="progress" id="skills">
+          <!-- Load with JS -->
+        </div>
+
+        <div class="title">Kalbos</div>
+        <div class="progress" id="languages">
+          <!-- Load with JS -->
+        </div>
+      </div>
+
+      <div class="layout-right">
+        <div class="description">
+          <div class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui minima distinctio veniam velit sunt commodi quos ad dolores repellat ducimus maiores modi sapiente fuga praesentium nulla recusandae cupiditate, odio ratione sequi dolorem alias ex impedit. Unde sunt, deleniti vitae blanditiis suscipit repellat? Corrupti repudiandae illo, voluptates earum laborum accusantium quas? Doloribus culpa quos veniam ullam distinctio. Quia distinctio error illo inventore nam placeat ad deserunt ipsa ratione nulla, nesciunt facilis quasi facere atque similique impedit. Rem, accusantium impedit! Culpa praesentium, maxime cumque est repellat iure odit ratione laborum totam sequi tempore tenetur, vel molestias reprehenderit nisi aut ut, facilis non?
+          </div>
+        </div>
+
+        <div class="experience" id="jobs">
+          <div class="title">
+            <div class="text">Darbo patirtis</div>
+          </div>
+        </div>
+
+        <div class="experience" id="education">
+          <div class="title">
+            <div class="text">Išsilavinimas</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="contact">
+      <i class="fas fa-envelope"></i>
+      <form action="/action_page.php">
+        <label for="name">Jūsų vardas:</label>
+        <input type="text" id="name" name="name" required >
+        <label for="email">El. paštas:</label>
+        <input type="email" id="email" name="email" required >
+
+
+        <label for="message">Pranešimas:</label>
+        <textarea id="message" name="message"></textarea>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+  </body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <script type="text/javascript" src="./js/main.js"></script>
+
+</html>

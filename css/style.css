@@ -1,0 +1,310 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  -webkit-transition: ease all 0.3s;
+  transition: ease all 0.3s;
+}
+
+.layout-left {
+  display: inline-block;
+  vertical-align: top;
+  background: #3b3a3f;
+  color: #cecece;
+  width: 300px;
+  min-width: 300px;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  padding: 20px 10px 10px 10px;
+  text-align: justify;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 3px 0px 10px 3px #5c5c5c;
+          box-shadow: 3px 0px 10px 3px #5c5c5c;
+  z-index: 1;
+}
+
+.layout-left > img {
+  width: 120px;
+  height: 170px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: calc(50% - 60px);
+}
+
+.layout-left > .title {
+  color: #5c40d8;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #cecece31;
+}
+
+.layout-left > .title#name {
+  font-size: 18px;
+}
+
+.layout-left p {
+  margin: 0;
+}
+
+.layout-left > .progress {
+  width: 280px;
+}
+
+.layout-left > .progress > .label {
+  display: inline-block;
+  width: calc(30% - 2px);
+}
+
+.layout-left > .progress > .progress-bar {
+  display: inline-block;
+  background: #cecece31;
+  height: 10px;
+  width: calc(70% - 5px);
+  padding: 1px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.layout-left > .progress > .progress-bar > .line {
+  height: 100%;
+  width: 50%;
+}
+
+.layout-left > .progress > .progress-bar > .line > .fill {
+  height: 100%;
+  background: #5c40d8;
+  -webkit-animation-name: progress-fill;
+          animation-name: progress-fill;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  border-radius: 3px;
+}
+
+@-webkit-keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.layout-right {
+  margin-left: -5px;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 300px);
+  min-width: 300px;
+  height: 100%;
+  text-align: justify;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.layout-right > .description {
+  position: relative;
+  background: #727272;
+  color: #ffffff;
+  height: 241px;
+}
+
+.layout-right > .description > .desc {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.layout-right > .experience {
+  padding: 10px 0 0 0px;
+  margin: 0 5%;
+}
+
+.layout-right > .experience > .title {
+  display: block;
+  border-top: solid 2px #5c40d8;
+}
+
+.layout-right > .experience > .title > .text {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #5c40d8;
+  color: #cecece;
+  border-bottom-right-radius: 50px;
+  height: 30px;
+  width: 170px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.layout-right > .experience > .experience-data {
+  display: block;
+}
+
+.layout-right > .experience > .experience-data > .years {
+  margin-top: 15px;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.layout-right > .experience > .experience-data > .description {
+  display: inline-block;
+  width: calc(80% - 5px);
+  margin: 10px 0;
+}
+
+.layout-right > .experience > .experience-data > .description > h2 {
+  margin: 0px;
+}
+
+.layout-right > .experience > .experience-data > .description > .years-mobile {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.layout-right > .experience:nth-of-type(3) {
+  margin-top: 25px;
+}
+
+@media only screen and (max-width: 930px) {
+  .layout-right > .description {
+    height: 320px;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .layout-left,
+  .layout-right {
+    margin-left: 0px;
+    width: 100%;
+    min-height: 0;
+    height: auto;
+  }
+  .layout-left {
+    -webkit-box-shadow: 0px 3px 10px 3px #5c5c5c;
+            box-shadow: 0px 3px 10px 3px #5c5c5c;
+  }
+  .layout-left > .progress {
+    width: 400px;
+  }
+  .layout-right > .description > .desc {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 452px) {
+  .layout-left > .progress {
+    width: 100%;
+  }
+  .layout-right > .description {
+    height: 450px;
+  }
+  .layout-right > .experience > .experience-data > .years {
+    display: none;
+  }
+  .layout-right > .experience > .experience-data > .description {
+    width: 100%;
+  }
+  .layout-right > .experience > .experience-data > .description > .years-mobile {
+    display: block;
+  }
+}
+
+.contact {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 5px 2px #727272;
+          box-shadow: 0px 0px 5px 2px #727272;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  opacity: 0.3;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.contact:hover {
+  opacity: 1;
+}
+
+.contact:hover > form {
+  display: block;
+}
+
+.contact > form {
+  padding: 10px;
+  display: block;
+  width: 260px;
+  margin-top: 25px;
+  display: none;
+}
+
+.contact > form > input {
+  width: calc(100% - 10px);
+  margin-bottom: 10px;
+}
+
+.contact > form textarea {
+  width: calc(100% - 10px) !important;
+  height: 100px !important;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.contact > form > input[type="submit"] {
+  background: #5c40d8;
+  color: #fff;
+  padding: 7px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.contact > form > input[type="submit"]:hover {
+  background: #3c20bd;
+}
+
+.contact > .fas {
+  float: right;
+  color: #5c40d8;
+  font-size: 30px;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */
